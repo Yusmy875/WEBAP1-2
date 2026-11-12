@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+<script>
+$(document).ready(function () {
+ 
+    $("#displayButton").click(function () {
+      let fileName=$("#file").val();
+        $("#output").load(fileName+".txt");
+    });
+             
+
+
+});
+</script>
+
+
+<input type="text" id="file" placeholder="Enter file name">
+<button id="displayButton">Display content</button>
+<div id="output"></div>
+
+</body>
+
+</html>
