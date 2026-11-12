@@ -9,6 +9,12 @@
         $(document).ready(function()
         {
             // TODO: #greet: read #firstName and #lastName with val() and display a greeting in #output
+            $("#great").click(function(){
+                let firstName = $("#firstName").val();
+                let lastNmae = $("#lastName").val();
+                $("#output").text("Hello "+ firstName +" "+ lastNmae);
+
+            });
 
             // TODO: error message in #message (class error) if a field is empty
 

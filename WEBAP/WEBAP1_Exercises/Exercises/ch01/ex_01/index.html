@@ -6,14 +6,29 @@
     <link rel="stylesheet" href="../../../assets/exercise.css">
     <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
     <script>
-        $(document).ready(function()
-        {
-            // TODO: bind a click event to every button (b1 … b8)
+      $(document).ready(function () {
 
-            // TODO: highlight the selected elements with css("background-color", "yellow")
+    function clearAll() {
+        $("#page, #page *").css("background-color", "");
+    }
 
-            // TODO: #reset removes all backgrounds
-        });
+    function highlight(selector) {
+        clearAll();                                   
+        $(selector).css("background-color", "pink");
+    }
+
+    $("#b1").click(function () { highlight("p"); });
+    $("#b2").click(function () { highlight("#left"); });
+    $("#b3").click(function () { highlight("#left p"); });
+    $("#b4").click(function () { highlight(".special"); });
+    $("#b5").click(function () { highlight("p.special"); });
+    $("#b6").click(function () { highlight("div#right p.special"); });
+    $("#b7").click(function () { highlight("#page p"); });
+    $("#b8").click(function () { highlight("#page > p"); });
+
+    $("#reset").click(clearAll);
+});
+
     </script>
 </head>
 <body>

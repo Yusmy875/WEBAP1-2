@@ -6,13 +6,21 @@
     <link rel="stylesheet" href="../../../assets/exercise.css">
     <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
     <script>
-        $(document).ready(function()
-        {
-            // TODO: #asHtml: insert the value of #content into #output with html()
+        $(document).ready(function(){
+         $("#asHtml").click(function () {
+        $("#output").html($("#content").val());
+        });
 
-            // TODO: #asText: insert the value of #content into #output with text()
+    
+        $("#asText").click(function () {
+        $("#output").text($("#content").val());
+        });
 
-            // TODO: #showSource: display the HTML of #output as text in #source
+    
+        $("#showSource").click(function () {
+        $("#source").text($("#output").html());
+       });
+
         });
     </script>
 </head>
