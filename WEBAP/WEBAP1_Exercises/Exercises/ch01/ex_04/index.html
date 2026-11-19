@@ -8,9 +8,33 @@
     <script>
         $(document).ready(function()
         {
-            // TODO: #calc: read #a, #b and #op, convert the values to numbers and display the result in #result
+            $("#calc").click(function(){
+           let a = parseInt($("#a").val());
+           let b = parseInt($("#b").val());
+           let op = $("#op").val();
 
-            // TODO: error messages for invalid input and division by zero
+           if(isNaN (a) || isNaN (b) ){
+               $("#result").text("Invalid input").addClass("error");
+           }
+          else if (op === "/" && b === 0) {
+                $("#result").text("Division by zero is not allowed").addClass("error");
+            }
+            else {
+                
+                 let result;
+                if (op === "+") {
+                    result = a + b;
+                } else if (op === "-") {
+                    result = a - b;
+                } else if (op === "*") {
+                    result = a * b;
+                } else if (op === "/") {
+                    result = a / b;
+                }
+                $("#result").text(result).removeClass("error");
+            }
+            });
+           
         });
     </script>
 </head>
